@@ -44,7 +44,6 @@ console.log("error: " + err);
                });
               query.on('end', function(result) {
                console.log(result.rows.length + ' rows were received');
-             //   res.render('comments.html', {comments: result.rows});
               fetchData();
               });
             }
@@ -58,6 +57,8 @@ console.log("error: " + err);
                console.log(result.rows.length + ' rows were received');
               });
             }
+
+            if(client==null) return;
 
             setEncoding();
 
