@@ -4,8 +4,9 @@
   "dependencies": {
     "express": "3.1.x",
     "hbs": "*",
-    "pg": "0.6.15",
-    "consolidate": "*"
+    "pg": "latest",
+    "consolidate": "*",
+    "nodemon": "*"
 
   },
   "engines": {
