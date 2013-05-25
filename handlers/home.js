@@ -4,6 +4,9 @@
 //For heroku, use
 var pg = require('pg');
 
+var gm = require('gm');
+
+
 module.exports = function(app) {
     return {
           show: function(req, res, next){

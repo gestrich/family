@@ -6,7 +6,8 @@
     "hbs": "*",
     "pg": "latest",
     "consolidate": "*",
-    "nodemon": "*"
+    "nodemon": "*",
+    "gm": "latest"
 
   },
   "engines": {
