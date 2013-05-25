@@ -9,8 +9,10 @@ module.exports = function(app) {
           },
 
           addComment: function(req, res, next){
-            name = req.query.name;
-            commentText = req.query.text;
+            if(req.query != 'undefined'){
+              name = req.query.name;
+              commentText = req.query.text;
+            }
 console.log( "name: " + name);
 console.log( "Text: " + commentText);
 
