@@ -1,5 +1,5 @@
 
-var pg = require('pg').native;
+var pg = require('pg');
 
 module.exports = function(app) {
     return {
