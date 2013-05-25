@@ -1,5 +1,5 @@
 
-var pg = require('pg');
+var pg = require('pg').native;
 
 module.exports = function(app) {
     return {
@@ -15,12 +15,14 @@ module.exports = function(app) {
             }
 console.log( "name: " + name);
 console.log( "Text: " + commentText);
-
+var connString = "postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6";
 //            pg.connect("postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6", function(err, client) {
-            pg.connect(process.env.DATABASE_URL, function(err, client) {
+//            pg.connect(process.env.DATABASE_URL, function(err, client) {
 //            pg.connect(postgres.env.DATABASE_URL, function(err, client) {
+var client = new pg.Client( connString);
+client.connect(function(err){
 console.log("pg=" + JSON.stringify(pg));
-console.log("clent=" + JSON.stringify(client));
+//console.log("clent=" + JSON.stringify(client));
 console.log("error: " + err);
             //add the new comment if provided
             //Once added, call function to
