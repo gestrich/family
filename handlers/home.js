@@ -16,8 +16,9 @@ module.exports = function(app) {
 console.log( "name: " + name);
 console.log( "Text: " + commentText);
 
-console.log("pg=" + pg);
-            pg.connect('postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6', function(err, client) {
+console.log("pg=" + JSON.stringify(pg));
+//            pg.connect('postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6', function(err, client) {
+            pg.connect(postgres.env.DATABASE_URL, function(err, client) {
 console.log("error: " + err);
             //add the new comment if provided
             //Once added, call function to
