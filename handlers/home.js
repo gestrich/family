@@ -1,4 +1,7 @@
 
+//for local, use
+//var pg = require('pg').native;
+//For heroku, use
 var pg = require('pg');
 
 module.exports = function(app) {
