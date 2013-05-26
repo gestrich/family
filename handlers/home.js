@@ -9,6 +9,10 @@ var gm = require('gm');
 
 module.exports = function(app) {
     return {
+          robert_g_gestrich: function(req, res, next){
+              res.render('robert_g_gestrich.html');
+          },
+
           show: function(req, res, next){
               res.render('index.html');
             

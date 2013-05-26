@@ -7,6 +7,7 @@ exports.register = function register(app){
   //home routes
   app.get('/', home.show);
   app.get('/comments', home.addComment); 
+  app.get('/robert_g_gestrich', home.robert_g_gestrich); 
 
 }
 
