@@ -23,7 +23,6 @@ height: expression(this.height > 600 ? "600px" : true);
 </script>
 
 <script type="text/javascript">
-
 var xmlhttp;
 
 function ajaxGet(serverAddress, f){
@@ -64,9 +63,15 @@ function ajaxPost(serverAddress, params, f){
   xmlhttp.send(params);
 }
 
+function submitComments($a, $b){
+ if($a == 'undefined' || $a == "") { window.alert('Please enter a name'); return;}
+ if($b == 'undefined' || $b == ""){  window.alert('Please enter your comment'); return};
+ comments($a, $b);
+}
+
 
 function comments($a, $b){
-
+  /*
   ajaxGet("/comments?name="+$a+"&text="+$b, function()
       {
       if(xmlhttp.readyState == 4  && xmlhttp.status == 200){
@@ -78,7 +83,7 @@ function comments($a, $b){
       }
 
       });
-
+*/
 }
 
 </script>
@@ -121,12 +126,12 @@ function comments($a, $b){
     </table>
     <h2>Comments</h2>
 
-    <form method="post" action="javascript:comments(
+    <form method="post" action="javascript:submitComments(
            document.getElementById('name').value, document.getElementById('commentText').value )">
     Your Name<br>
     <textarea id='name' rows="1" cols="30"></textarea> <br>
     Message <br>
-    <textarea id='commentText' rows="4" cols="50"> </textarea> <br>
+    <textarea id='commentText' rows="4" cols="50"></textarea> <br>
     <input id='submit' type= "submit" style="font-face: 'Comic Sans MS'; font-size: larger; color: brown; background-color: #FFFFC0; border: 3pt ridge lightgrey" name = "submit" value="Submit" />
     </form>
     <div id='comments'>

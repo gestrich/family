@@ -23,6 +23,7 @@ module.exports = function(app) {
               name = req.query.name;
               commentText = req.query.text;
             }
+
 console.log( "name: " + name);
 console.log( "Text: " + commentText);
 var connString = "postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6";
