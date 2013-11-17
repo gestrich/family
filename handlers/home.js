@@ -74,7 +74,7 @@ console.log("typeof = " + typeof(commentText));
 
             setEncoding();
 
-            if( typeof(name) != 'undefined' && typeof(commentText) != 'undefined' && name.length > 0 && commentText.length>0){
+            if( typeof name != 'undefined' && typeof commentText != 'undefined' && name.length > 0 && commentText.length>0){
               insertComment();
             }else{
               fetchData();
