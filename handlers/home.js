@@ -23,11 +23,6 @@ module.exports = function(app) {
               name = req.query.name;
               commentText = req.query.text;
 
-console.log("name = " + name);
-console.log("commentText = " + commentText);
-console.log("commentText = " + commentText);
-console.log("typeof = " + typeof(name));
-console.log("typeof = " + typeof(commentText));
             }
 
             var connString = "postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6";
@@ -75,6 +70,12 @@ console.log("typeof = " + typeof(commentText));
             setEncoding();
 
             if( typeof name != 'undefined' && typeof commentText != 'undefined' && name.length > 0 && commentText.length>0){
+console.log("name = " + name);
+console.log("commentText = " + commentText);
+console.log("commentText = " + commentText);
+console.log("typeof = " + typeof(name));
+console.log("typeof = " + typeof(commentText));
+
               insertComment();
             }else{
               fetchData();
