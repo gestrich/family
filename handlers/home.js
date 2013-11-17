@@ -75,7 +75,7 @@ console.log("name = " + name);
 console.log("commentText = " + commentText);
 console.log("commentText = " + commentText);
 console.log("typeof = " + typeof name);
-console.log("typeof = " + typeofcommentText);
+console.log("typeof = " + typeof commentText);
 
               insertComment();
             }else{
