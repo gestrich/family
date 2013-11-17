@@ -70,7 +70,9 @@ console.log("req.query = " + JSON.stringify(req.query));
 
             setEncoding();
 
-            if( name != 'undefined' && commentText != 'undefined' && name.length > 0 && commentText.length>0){
+            if( name != 'undefined' && commentText != 'undefined' 
+              && typeof name != 'undefined && typeof commentText != 'undefined 
+              && name.length > 0 && commentText.length>0){
 console.log("name = " + name);
 console.log("commentText = " + commentText);
 console.log("commentText = " + commentText);
