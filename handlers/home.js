@@ -24,23 +24,15 @@ module.exports = function(app) {
               commentText = req.query.text;
             }
 
-console.log( "name: " + name);
-console.log( "Text: " + commentText);
-var connString = "postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6";
-//            pg.connect("postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6", function(err, client) {
-//            pg.connect(process.env.DATABASE_URL, function(err, client) {
-//            pg.connect(postgres.env.DATABASE_URL, function(err, client) {
-var client = new pg.Client( connString);
-client.connect(function(err){
-console.log("pg=" + JSON.stringify(pg));
-//console.log("clent=" + JSON.stringify(client));
-console.log("error: " + err);
+            var connString = "postgres://lwfowkysseplan:OtoK8Fk-laklr6cdb-MgIhI_FO@ec2-54-227-255-156.compute-1.amazonaws.com:5432/d2smc7eu29u4b6";
+            var client = new pg.Client( connString);
+            client.connect(function(err){
             //add the new comment if provided
             //Once added, call function to
-            var fetchData = function(){
-              var query = client.query('SELECT * FROM COMMENTS ORDER BY comment_time desc');
-              query.on('row', function(row, result) {
-                result.addRow(row);
+              var fetchData = function(){
+                var query = client.query('SELECT * FROM COMMENTS ORDER BY comment_time desc');
+                query.on('row', function(row, result) {
+                  result.addRow(row);
                });
               query.on('end', function(result) {
                console.log(result.rows.length + ' rows were received');
